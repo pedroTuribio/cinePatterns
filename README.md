@@ -36,3 +36,5 @@ Estrutura (inicial)
 ┣ 📝 TODO.md
 ┗ 📝 .gitignore
 ```
+Status
+Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
