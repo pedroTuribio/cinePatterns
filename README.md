@@ -32,7 +32,6 @@ Estrutura (inicial)
 ```
 📁 cinema-system
 ┣ 📁 src // código entregue até a data
-┣ 📁 docs // diagramas UML e planejamento
 ┣ 📝 README.md
 ┣ 📝 TODO.md
 ┗ 📝 .gitignore
