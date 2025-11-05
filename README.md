@@ -1,4 +1,4 @@
- Sistema de Gerenciamento de Cinema
+    Sistema de Gerenciamento de Cinema
  
 Este projeto implementa um sistema orientado a objetos para gerenciamento de cinema, com ênfase em boas práticas de arquitetura e uso de padrões de projeto (Design Patterns).
 O objetivo é simular funcionalidades típicas de um cinema, como gerenciamento de filmes, sessões, ingressos e compras, aplicando técnicas de programação limpa .
@@ -18,3 +18,22 @@ Funcionalidades
  Programação Orientada a Objetos (POO)
  Abstração, Encapsulamento, Herança e Polimorfismo
  Clean Code & boas práticas
+
+ Padrões de Projeto utilizados
+- **Singleton** — controle de instância do sistema
+- **Factory Method** — criação de tipos de ingressos
+- **Strategy** — regras de precificação
+- **Observer** — avisos para clientes
+- **Decorator** — adicionar extras ao ingresso
+- **Facade** — fluxo simplificado de compra
+
+
+Estrutura (inicial)
+```
+📁 cinema-system
+┣ 📁 src // código entregue até a data
+┣ 📁 docs // diagramas UML e planejamento
+┣ 📝 README.md
+┣ 📝 TODO.md
+┗ 📝 .gitignore
+```
