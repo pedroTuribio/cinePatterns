@@ -1,5 +1,3 @@
-
-
 from models.cliente import Cliente
 from models.funcionario import Funcionario
 
