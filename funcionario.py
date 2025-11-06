@@ -1,6 +1,3 @@
-# models/funcionario.py
-# Classe Funcionario herda de Pessoa e representa um funcionário do cinema
-
 from models.pessoa import Pessoa
 
 class Funcionario(Pessoa):
