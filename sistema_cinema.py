@@ -1,16 +1,18 @@
 # modelos/sistema_cinema.py
-# Classe principal que gerencia o sistema de cinema (Singleton Pattern)
+# Sistema principal com Singleton + Observer Pattern integrado
 
 from modelos.sessao import Sessao
 from modelos.filme import Filme
 from modelos.sala import Sala
+from modelos.observador.subject import Subject
 
-class SistemaCinema:
+class SistemaCinema(Subject):
     _instancia = None
 
     def __init__(self):
         if SistemaCinema._instancia is not None:
             raise Exception("Use SistemaCinema.get_instance() para obter a instância do sistema.")
+        super().__init__()
         self.sessoes = []
 
     @staticmethod
@@ -21,7 +23,9 @@ class SistemaCinema:
 
     def adicionar_sessao(self, sessao: Sessao):
         self.sessoes.append(sessao)
-        print(f"Sessão adicionada: {sessao.filme.titulo} às {sessao.horario} (Sala {sessao.sala.numero})")
+        mensagem = f"Novo filme em cartaz: {sessao.filme.titulo} às {sessao.horario} (Sala {sessao.sala.numero})"
+        print(mensagem)
+        self.notificar_observadores(mensagem)
 
     def listar_sessoes(self):
         print("\n📅 Sessões disponíveis:")
