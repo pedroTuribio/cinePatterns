@@ -55,3 +55,41 @@ cinema-system/
 
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
+cinema-system/
+│
+├── modelos/
+│ ├── pessoa.py
+│ ├── cliente.py
+│ ├── funcionario.py
+│ ├── filme.py
+│ ├── sala.py
+│ ├── sessao.py
+│ └── sistema_cinema.py
+│
+├── pagamento/
+│ ├── pagamento_strategy.py
+│ └── metodos_pagamento.py
+│
+├── observador/
+│ ├── observer.py
+│ └── subject.py
+│
+├── main.py
+└── README.md
+
+
+---
+
+## 🚧 Status
+
+🟡 Projeto em desenvolvimento.  
+O código atual representa o estágio concluído até o prazo da disciplina.
+
+---
+
+## ▶️ Execução
+
+Para executar o projeto localmente:
+
+```bash
+python main.py
