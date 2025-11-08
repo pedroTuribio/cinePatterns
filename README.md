@@ -26,18 +26,14 @@ Funcionalidades
 - **Observer** — avisos para clientes
 - **Decorator** — adicionar extras ao ingresso
 - **Facade** — fluxo simplificado de compra
-
-
-
-
+- 
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
 
 
 ## 🚧 Status
 
-🟡 Projeto em desenvolvimento.  
-O código atual representa o estágio concluído até o prazo da disciplina.
+
 
 ---
 
