@@ -27,26 +27,6 @@ Funcionalidades
 - **Decorator** — adicionar extras ao ingresso
 - **Facade** — fluxo simplificado de compra
 
-cinema-system/
-│
-├── modelos/
-│   ├── pessoa.py
-│   ├── cliente.py
-│   ├── filme.py
-│   ├── sala.py
-│   ├── sessao.py
-│   └── sistema_cinema.py
-│
-├── modelos/pagamento/
-│   ├── pagamento_strategy.py
-│   └── metodos_pagamento.py
-│
-├── modelos/observador/
-│   ├── observer.py
-│   └── subject.py
-│
-├── main.py
-└── README.md
 
 
 
