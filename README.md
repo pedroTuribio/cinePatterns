@@ -52,6 +52,6 @@ cinema-system/
 └── README.md
 
 /n
-```
+
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
