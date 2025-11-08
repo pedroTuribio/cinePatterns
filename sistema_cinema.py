@@ -1,10 +1,3 @@
-# modelos/sistema_cinema.py
-# Sistema principal com Singleton + Observer Pattern integrado
-
-from modelos.sessao import Sessao
-from modelos.filme import Filme
-from modelos.sala import Sala
-from modelos.observador.subject import Subject
 
 class SistemaCinema(Subject):
     _instancia = None
