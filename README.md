@@ -54,7 +54,7 @@ cinema-system/
 ├── main.py
 └── README.md
 
-
+""""""
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
 
