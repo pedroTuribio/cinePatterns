@@ -27,8 +27,11 @@ Funcionalidades
 - **Decorator** — adicionar extras ao ingresso
 - **Facade** — fluxo simplificado de compra
 
-/n 🗂 Estrutura do Projeto
-''
+
+""""
+## 🗂 Estrutura do Projeto
+
+
 cinema-system/
 │
 ├── modelos/
@@ -51,7 +54,6 @@ cinema-system/
 ├── main.py
 └── README.md
 
-/n
 
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
