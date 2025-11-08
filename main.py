@@ -1,12 +1,3 @@
-# main.py
-# Demonstra os padrões Strategy e Observer funcionando juntos
-
-from modelos.filme import Filme
-from modelos.sala import Sala
-from modelos.sessao import Sessao
-from modelos.sistema_cinema import SistemaCinema
-from modelos.cliente import Cliente
-from modelos.pagamento.metodos_pagamento import PagamentoPix, PagamentoCartao
 
 def main():
     # Sistema Singleton
