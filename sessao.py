@@ -1,5 +1,4 @@
-from modelos.filme import Filme
-from modelos.sala import Sala
+
 
 class Sessao:
     def __init__(self, filme: Filme, sala: Sala, horario: str):
