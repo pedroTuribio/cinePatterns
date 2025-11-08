@@ -27,8 +27,6 @@ Funcionalidades
 - **Decorator** — adicionar extras ao ingresso
 - **Facade** — fluxo simplificado de compra
 
-
-Estrutura (inicial)
 cinema-system/
  ┣ modelos/
  ┃ ┣ pessoa.py
@@ -46,6 +44,7 @@ cinema-system/
  ┃ ┃ ┗ subject.py
  ┣ main.py
  ┗ README.md
+
 
 ```
 Status
