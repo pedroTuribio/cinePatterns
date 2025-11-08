@@ -1,9 +1,3 @@
-# modelos/cliente.py
-# Classe Cliente herda de Pessoa e implementa o padrão Observer
-
-from modelos.pessoa import Pessoa
-from modelos.observador.observer import Observer
-
 class Cliente(Pessoa, Observer):
     def __init__(self, nome: str, email: str):
         super().__init__(nome, email)
