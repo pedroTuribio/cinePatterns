@@ -1,0 +1,40 @@
+# Arquivo: .github/workflows/python-package.yml
+
+name: Qualidade de Código (CI)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"] # Use a versão que você prefere
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies and tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install black pytest  # Instala as ferramentas
+          # Se você tiver um requirements.txt, descomente a linha abaixo:
+          # pip install -r requirements.txt
+          
+      # --- PASSO 1: VERIFICAÇÃO DE CLEAN CODE (Black) ---
+      - name: Check code style with Black
+        run: black --check .
+        
+      # --- PASSO 2: EXECUÇÃO DE TESTES UNITÁRIOS ---
+      - name: Run tests (Pytest)
+        # Note: Se você não tiver o arquivo conftest.py ou testes,
+        # você pode comentar ou remover esta seção por enquanto.
+        run: pytest
