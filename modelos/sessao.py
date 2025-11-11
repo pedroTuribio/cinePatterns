@@ -5,4 +5,4 @@ class Sessao:
         self.horario = horario
 
     def exibir_info(self):
-        print(f"Sessão: {self.filme.titulo} - {self.horario} - Sala {self.sala.numero}")
+        print(f"Sessão: {self.filme.titulo} - {self.horario} (Sala {self.sala.numero})")
