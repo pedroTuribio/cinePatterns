@@ -3,8 +3,7 @@ from modelos.filme import Filme
 from modelos.sala import Sala
 from modelos.observador.subject import Subject
 
-class SistemaCinema(Subject):
-    _instancia = None
+_instancia = None
 
     def __init__(self):
         if SistemaCinema._instancia is not None:
@@ -19,12 +18,15 @@ class SistemaCinema(Subject):
         return SistemaCinema._instancia
 
     def adicionar_sessao(self, sessao: Sessao):
-        self.sessoes.append(sessao)
         mensagem = f"Novo filme em cartaz: {sessao.filme.titulo} às {sessao.horario} (Sala {sessao.sala.numero})"
-        print(mensagem)
+        print(f"\n{mensagem}")
+        self.sessoes.append(sessao)
         self.notificar_observadores(mensagem)
 
     def listar_sessoes(self):
-        print("\n📅 Sessões disponíveis:")
-        for sessao in self.sessoes:
-            sessao.exibir_info()
+        titulo_secao("Sessões disponíveis")
+        if not self.sessoes:
+            print("Nenhuma sessão cadastrada no momento.")
+        else:
+            for i, sessao in enumerate(self.sessoes, start=1):
+                print(f"{i}. {sessao.filme.titulo} - {sessao.horario} (Sala {sessao.sala.numero})")
