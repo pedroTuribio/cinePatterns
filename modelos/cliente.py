@@ -9,8 +9,8 @@ class Cliente(Pessoa, Observer):
         print(f"Cliente logado: {self.nome}")
 
     def comprar_ingresso(self, valor: float, metodo_pagamento):
-        print(f"{self.nome} está comprando um ingresso...")
+        print(f"\n{self.nome} está comprando um ingresso...")
         metodo_pagamento.pagar(valor)
 
     def atualizar(self, mensagem: str):
-        print(f"📩 Notificação para {self.nome}: {mensagem}")
+        print(f"Notificação para {self.nome}: {mensagem}")
