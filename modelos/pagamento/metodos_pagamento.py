@@ -1,9 +1,5 @@
 from modelos.pagamento.pagamento_strategy import PagamentoStrategy
 
-class PagamentoStrategy(ABC):
-    @abstractmethod
-    def pagar(self, valor: float):
-        pass
 
 class PagamentoPix(PagamentoStrategy):
     def pagar(self, valor: float):
