@@ -2,12 +2,14 @@ from abc import ABC, abstractmethod
 import os
 
 
+# --------------------------------------------------
 # Funções utilitárias
-
+# --------------------------------------------------
 
 def limpar_terminal():
     """Limpa a tela do terminal para uma execução mais limpa."""
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def titulo_secao(texto: str):
     """Imprime um título de seção com divisores."""
@@ -15,8 +17,10 @@ def titulo_secao(texto: str):
     print(f"{texto.upper()}")
     print("=" * 60)
 
-# Classes básicas
 
+# --------------------------------------------------
+# Classes básicas
+# --------------------------------------------------
 
 class Pessoa:
     def __init__(self, nome: str, email: str):
@@ -26,6 +30,7 @@ class Pessoa:
     def exibir_info(self):
         print(f"Nome: {self.nome} | Email: {self.email}")
 
+
 class Funcionario(Pessoa):
     def __init__(self, nome: str, email: str, cargo: str):
         super().__init__(nome, email)
@@ -34,16 +39,19 @@ class Funcionario(Pessoa):
     def exibir_info(self):
         print(f"Funcionário: {self.nome} | Cargo: {self.cargo}")
 
+
 class Filme:
     def __init__(self, titulo: str, duracao: int, classificacao: str):
         self.titulo = titulo
         self.duracao = duracao
         self.classificacao = classificacao
 
+
 class Sala:
     def __init__(self, numero: int, capacidade: int):
         self.numero = numero
         self.capacidade = capacidade
+
 
 class Sessao:
     def __init__(self, filme, sala, horario: str):
@@ -55,13 +63,15 @@ class Sessao:
         print(f"Sessão: {self.filme.titulo} - {self.horario} (Sala {self.sala.numero})")
 
 
+# --------------------------------------------------
 # Padrão Observer
-
+# --------------------------------------------------
 
 class Observer(ABC):
     @abstractmethod
     def atualizar(self, mensagem: str):
         pass
+
 
 class Subject:
     def __init__(self):
@@ -73,6 +83,7 @@ class Subject:
     def notificar_observadores(self, mensagem: str):
         for observador in self._observadores:
             observador.atualizar(mensagem)
+
 
 class Cliente(Pessoa, Observer):
     def __init__(self, nome: str, email: str):
@@ -88,29 +99,35 @@ class Cliente(Pessoa, Observer):
     def atualizar(self, mensagem: str):
         print(f"Notificação para {self.nome}: {mensagem}")
 
-# Padrão Strategy: Pagamento
 
+# --------------------------------------------------
+# Padrão Strategy: Pagamento
+# --------------------------------------------------
 
 class PagamentoStrategy(ABC):
     @abstractmethod
     def pagar(self, valor: float):
         pass
 
+
 class PagamentoPix(PagamentoStrategy):
     def pagar(self, valor: float):
         print(f"Pagamento de R${valor:.2f} realizado via Pix.")
 
+
 class PagamentoCartao(PagamentoStrategy):
     def pagar(self, valor: float):
         print(f"Pagamento de R${valor:.2f} realizado no Cartão.")
+
 
 class PagamentoDinheiro(PagamentoStrategy):
     def pagar(self, valor: float):
         print(f"Pagamento de R${valor:.2f} realizado em Dinheiro.")
 
 
+# --------------------------------------------------
 # Padrão Singleton: Sistema do Cinema
-
+# --------------------------------------------------
 
 class SistemaCinema(Subject):
     _instancia = None
@@ -142,8 +159,9 @@ class SistemaCinema(Subject):
                 print(f"{i}. {sessao.filme.titulo} - {sessao.horario} (Sala {sessao.sala.numero})")
 
 
+# --------------------------------------------------
 # Função principal com menu interativo
-
+# --------------------------------------------------
 
 def main():
     limpar_terminal()
@@ -151,26 +169,47 @@ def main():
 
     sistema = SistemaCinema.get_instance()
 
-    # Clientes (Observer)
+    # Clientes
     cliente1 = Cliente("Pedro", "pedro@email.com")
     cliente2 = Cliente("Mariana", "mariana@email.com")
+    cliente3 = Cliente("Lucas", "lucas@email.com")
+
     sistema.adicionar_observador(cliente1)
     sistema.adicionar_observador(cliente2)
+    sistema.adicionar_observador(cliente3)
 
-    # Filmes e sessões
+    # Filmes e Sessões
     filme1 = Filme("Deadpool 3", 135, "16 anos")
     filme2 = Filme("Truque de Mestre 3", 136, "18 anos")
+    filme3 = Filme("O Telefone Preto 2", 137, "20 anos")
+    filme4 = Filme("Duna: Parte 2", 166, "14 anos")
+    filme5 = Filme("Divertida Mente 2", 120, "Livre")
+    filme6 = Filme("Venom 3: A Última Dança", 130, "16 anos")
 
     sala1 = Sala(1, 100)
-    sala2 = Sala(2, 120)
+    sala2 = Sala(2, 101)
+    sala3 = Sala(3, 102)
+    sala4 = Sala(4, 80)
+    sala5 = Sala(5, 90)
+    sala6 = Sala(6, 70)
 
     sessao1 = Sessao(filme1, sala1, "21:00")
     sessao2 = Sessao(filme2, sala2, "21:10")
+    sessao3 = Sessao(filme3, sala3, "21:20")
+    sessao4 = Sessao(filme4, sala4, "19:00")
+    sessao5 = Sessao(filme5, sala5, "18:30")
+    sessao6 = Sessao(filme6, sala6, "22:00")
 
     sistema.adicionar_sessao(sessao1)
     sistema.adicionar_sessao(sessao2)
-
+    sistema.adicionar_sessao(sessao3)
+    sistema.adicionar_sessao(sessao4)
+    sistema.adicionar_sessao(sessao5)
+    sistema.adicionar_sessao(sessao6)
+     
+    # --------------------------------------------------
     # MENU INTERATIVO
+    # --------------------------------------------------
     while True:
         limpar_terminal()
         titulo_secao("MENU PRINCIPAL")
@@ -220,11 +259,12 @@ def main():
         elif opcao == "3":
             print("\nEncerrando o sistema... até logo!")
             break
+
         else:
             print("Opção inválida!")
             input("\nPressione ENTER para continuar...")
 
-# --------------------------------------------------
 
+# --------------------------------------------------
 if __name__ == "__main__":
     main()
