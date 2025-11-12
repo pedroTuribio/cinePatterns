@@ -165,11 +165,14 @@ class SistemaCinema(Subject):
 
 def main():
     limpar_terminal()
-    titulo_secao("Sistema de Cinema")
 
+    # Reinicia o Singleton sempre que o programa for executado
+    SistemaCinema._instancia = None
+
+    titulo_secao("Sistema de Cinema")
     sistema = SistemaCinema.get_instance()
 
-    # Clientes
+    # Clientes (Observer)
     cliente1 = Cliente("Pedro", "pedro@email.com")
     cliente2 = Cliente("Mariana", "mariana@email.com")
     cliente3 = Cliente("Lucas", "lucas@email.com")
@@ -185,6 +188,7 @@ def main():
     filme4 = Filme("Duna: Parte 2", 166, "14 anos")
     filme5 = Filme("Divertida Mente 2", 120, "Livre")
     filme6 = Filme("Venom 3: A Última Dança", 130, "16 anos")
+    filme7 = Filme("Gladiador 2", 150, "18 anos")
 
     sala1 = Sala(1, 100)
     sala2 = Sala(2, 101)
@@ -192,6 +196,7 @@ def main():
     sala4 = Sala(4, 80)
     sala5 = Sala(5, 90)
     sala6 = Sala(6, 70)
+    sala7 = Sala(7, 95)
 
     sessao1 = Sessao(filme1, sala1, "21:00")
     sessao2 = Sessao(filme2, sala2, "21:10")
@@ -199,6 +204,7 @@ def main():
     sessao4 = Sessao(filme4, sala4, "19:00")
     sessao5 = Sessao(filme5, sala5, "18:30")
     sessao6 = Sessao(filme6, sala6, "22:00")
+    sessao7 = Sessao(filme7, sala7, "20:00")
 
     sistema.adicionar_sessao(sessao1)
     sistema.adicionar_sessao(sessao2)
@@ -206,7 +212,13 @@ def main():
     sistema.adicionar_sessao(sessao4)
     sistema.adicionar_sessao(sessao5)
     sistema.adicionar_sessao(sessao6)
-     
+    sistema.adicionar_sessao(sessao7)
+
+    print(f"\nTotal de sessões cadastradas: {len(sistema.sessoes)}")
+    for s in sistema.sessoes:
+        print(f"- {s.filme.titulo} ({s.horario})")
+    input("\nPressione ENTER para continuar...")
+
     # --------------------------------------------------
     # MENU INTERATIVO
     # --------------------------------------------------
@@ -221,7 +233,7 @@ def main():
 
         if opcao == "1":
             sistema.listar_sessoes()
-            input("\nPressione ENTER para continuar...")
+            input("\nPressione ENTER para voltar ao menu...")
 
         elif opcao == "2":
             sistema.listar_sessoes()
@@ -232,6 +244,25 @@ def main():
                 sessao = sistema.sessoes[escolha - 1]
             except (ValueError, IndexError):
                 print("Sessão inválida!")
+                input("\nPressione ENTER para continuar...")
+                continue
+
+            titulo_secao(f"Compra de ingresso - {sessao.filme.titulo}")
+            print("Escolha o cliente:")
+            print("1. Pedro")
+            print("2. Mariana")
+            print("3. Lucas")
+
+            cliente_escolhido = input("\nDigite o número do cliente: ")
+
+            if cliente_escolhido == "1":
+                cliente = cliente1
+            elif cliente_escolhido == "2":
+                cliente = cliente2
+            elif cliente_escolhido == "3":
+                cliente = cliente3
+            else:
+                print("Cliente inválido!")
                 input("\nPressione ENTER para continuar...")
                 continue
 
@@ -252,7 +283,7 @@ def main():
                 input("\nPressione ENTER para continuar...")
                 continue
 
-            cliente1.comprar_ingresso(35.00, metodo)
+            cliente.comprar_ingresso(35.00, metodo)
             print(f"Ingresso para '{sessao.filme.titulo}' comprado com sucesso!")
             input("\nPressione ENTER para continuar...")
 
