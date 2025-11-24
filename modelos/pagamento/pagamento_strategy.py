@@ -4,3 +4,4 @@ class PagamentoStrategy(ABC):
     @abstractmethod
     def pagar(self, valor: float):
         pass
+
