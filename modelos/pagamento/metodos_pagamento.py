@@ -6,13 +6,13 @@ class PagamentoStrategy(ABC):
         pass
 
 class PagamentoPix(PagamentoStrategy):
-    def pagar(self, valor: float):
-        print(f"Pagamento de R${valor:.2f} realizado via Pix.")
+    def pagar(self, valor):
+        print(f"Pagamento R${valor:.2f} via Pix.")
 
 class PagamentoCartao(PagamentoStrategy):
-    def pagar(self, valor: float):
-        print(f"Pagamento de R${valor:.2f} realizado no Cartão.")
+    def pagar(self, valor):
+        print(f"Pagamento R${valor:.2f} no Cartão.")
 
 class PagamentoDinheiro(PagamentoStrategy):
-    def pagar(self, valor: float):
-        print(f"Pagamento de R${valor:.2f} realizado em Dinheiro.")
+    def pagar(self, valor):
+        print(f"Pagamento R${valor:.2f} em Dinheiro.")
