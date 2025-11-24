@@ -21,11 +21,8 @@ Funcionalidades
 
  Padrões de Projeto utilizados
 - **Singleton** — controle de instância do sistema
-- **Factory Method** — criação de tipos de ingressos
 - **Strategy** — regras de precificação
 - **Observer** — avisos para clientes
-- **Decorator** — adicionar extras ao ingresso
-- **Facade** — fluxo simplificado de compra
 - 
 Status
 Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
