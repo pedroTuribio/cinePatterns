@@ -35,6 +35,7 @@ Funções auxiliares (limpar terminal, títulos etc.)
 📄 main.py
 Arquivo principal do programa
 
+
 ## ▶️ Execução
 
 Para executar o projeto localmente:
