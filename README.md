@@ -22,16 +22,7 @@ Funcionalidades
  Padrões de Projeto utilizados
 - **Singleton** — controle de instância do sistema
 - **Strategy** — regras de precificação
-- **Observer** — avisos para clientes
-- 
-Status
-Projeto em desenvolvimento. Código atual representa o estágio até o prazo da disciplina
 
-
-
-
-
----
 
 ## ▶️ Execução
 
