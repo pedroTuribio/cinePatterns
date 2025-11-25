@@ -20,8 +20,9 @@ Funcionalidades
  Clean Code & boas práticas
 
  Padrões de Projeto utilizados
-- **Singleton** — controle de instância do sistema
-- **Strategy** — regras de precificação
+- **Singleton**  
+- **Strategy** 
+- **OBSERVER ** 
 
 
 ## ▶️ Execução
