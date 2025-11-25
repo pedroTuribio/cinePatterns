@@ -24,6 +24,16 @@ Funcionalidades
 - **Strategy** 
 - **OBSERVER ** 
 
+Que Cada Pasta Faz
+
+📁 modelos/
+Onde ficam os padrões de projeto (Singleton, Strategy, Observer etc.)
+
+📁 utils/
+Funções auxiliares (limpar terminal, títulos etc.)
+
+📄 main.py
+Arquivo principal do programa
 
 ## ▶️ Execução
 
