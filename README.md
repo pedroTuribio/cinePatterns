@@ -1,44 +1,43 @@
-    Sistema de Gerenciamento de Cinema
- 
-Este projeto implementa um sistema orientado a objetos para gerenciamento de cinema, com ênfase em boas práticas de arquitetura e uso de padrões de projeto (Design Patterns).
-O objetivo é simular funcionalidades típicas de um cinema, como gerenciamento de filmes, sessões, ingressos e compras, aplicando técnicas de programação limpa .
+Cinema Management System
 
-Funcionalidades
+This project implements an object-oriented system for cinema management, emphasizing good architectural practices and the use of design patterns.
 
- Cadastro e gerenciamento de filmes
- Cadastro de clientes e funcionários
- Controle de sessões e salas
- Compra de ingressos com diferentes categorias
- Adição de combos e serviços extra (pipoca, óculos 3D etc.)
- Notificações para clientes sobre novas sessões/filmes
- Interface simplificada para fluxo de compra
+The goal is to simulate typical cinema functionalities, such as managing films, sessions, tickets, and purchases, applying clean programming techniques.
 
- Técnicas e Conceitos Aplicados
- 
- Programação Orientada a Objetos (POO)
- Abstração, Encapsulamento, Herança e Polimorfismo
- Clean Code & boas práticas
+Features
 
- Padrões de Projeto utilizados
-- **Singleton**  
-- **Strategy** 
-- **OBSERVER ** 
+Movie registration and management
+Customer and employee registration
+Session and theater control
+Ticket purchase with different categories
+Adding combos and extra services (popcorn, 3D glasses, etc.)
+Notifications to customers about new sessions/movies
+Simplified interface for purchase flow
 
-Que Cada Pasta Faz
+Applied Techniques and Concepts
 
-📁 modelos/
-Onde ficam os padrões de projeto (Singleton, Strategy, Observer etc.)
+Object-Oriented Programming (OOP)
+Abstraction, Encapsulation, Inheritance, and Polymorphism
+Clean Code & best practices
 
-📁 utils/
-Funções auxiliares (limpar terminal, títulos etc.)
+Design Patterns used
+- **Singleton**
 
-📄 main.py
-Arquivo principal do programa
+- **Strategy**
 
+- **OBSERVER**
 
-## ▶️ Execução
+What Each Folder Does
 
-Para executar o projeto localmente:
+📁 models/ Where the design patterns are located (Singleton, Strategy, Observer, etc.)
+
+📁 utils/ Auxiliary functions (clear terminal, titles, etc.)
+
+📄 main.py Main program file
+
+## ▶️ Execution
+
+To run the project locally:
 
 ```bash
 python main.py
